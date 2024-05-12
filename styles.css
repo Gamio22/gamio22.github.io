@@ -1,0 +1,106 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.sidebar_container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100vh;
+	width: 250px;
+	background-color: #000223;
+}
+
+.sidebar_top {
+	padding: 1.6rem;
+}
+
+.sidebar_top p {
+	color: #fff;
+	font-size: x-large;
+	font-weight: 800;
+	text-align: center;
+}
+
+.sidebar_li_container {
+	padding: 0 0.8rem;
+}
+
+.sidebar_container ul li {
+	position: relative;
+	list-style-type: none;
+	height: 50px;
+	line-height: 50px;
+}
+
+.sidebar_container ul li a {
+	color: white;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	margin: 0.5rem;
+	border-radius: 10px;
+}
+
+.sidebar_container ul li a:hover {
+	background-color: #fff;
+	color: #12171e;
+}
+
+.sidebar_container ul li a i {
+	min-width: 50px;
+	text-align: center;
+	height: 50px;
+	border-radius: 12px;
+	line-height: 50px;
+}
+
+.sidebar_bottom {
+	position: absolute;
+	bottom: 0;
+	width: 250px;
+	display: flex;
+	align-items: center;
+	padding: 1.2rem;
+	color: white;
+}
+
+.sidebar_bottom_user {
+	text-decoration: none;
+	color: white;
+}
+
+.user_img {
+	display: flex;
+	width: 50px;
+	border-radius: 100%;
+	border: 2px solid #eee;
+}
+
+.sidebar_bottom .user_name {
+	font-weight: 300;
+	font-size: large;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.sidebar_bottom .sidebar_bottom_text {
+	padding: 0 0.8rem;
+	overflow: hidden;
+}
+
+.sidebar_bottom .sidebar_logout_container {
+	display: flex;
+	color: white;
+	text-decoration: none;
+	font-size: small;
+}
+
+.sidebar_bottom .sidebar_logout_container i {
+  align-self: center;
+	padding: 0 0.2rem;
+}
