@@ -10,6 +10,7 @@
     <div class="sidebar_container">
       <div class="sidebar_top">
         <p>Apartamentos</p>
+        <i class="bx bx-menu" id="btn"></i>
       </div>
 
       <ul>
@@ -45,5 +46,21 @@
     </div>
   </div>
 
+  <div class="main-content"> 
+    <h1>Hello World!</h1>
+  </div>
+
 </body>
+
+<script> 
+  let btn = document.querySelector('#btn'); // Select the element with btn id
+  let sidebar = document.querySelector('.sidebar_container'); // Selects the element with sidebar_... class
+  let mainContent = document.querySelector('.main-content');
+
+  btn.onclick = function () {
+    sidebar.classList.toggle('active'); // The classList property provides an interface to manipulate the classes of an element. The toggle method adds the class if it's not present, and removes it if it is present
+    mainContent.classList.toggle('active');
+  };
+</script>
+
 </html>
