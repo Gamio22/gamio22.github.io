@@ -11,31 +11,40 @@
 	left: 0;
 	height: 100vh;
 	width: 250px;
-	background-color: #000223;
+	background-color: hsl(237, 100%, 7%);
 	padding: 8px;
+	transition: width 0.3s ease-out;
+}
+
+.sidebar_container.active {
+	width: 90px;
 }
 
 .sidebar_top {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 20px 16px 13px 16px;
+	padding: 25px 16px 8px 16px;
 	color: #fff;
 	font-size: x-large;
+	min-height: 62px;
 }
 
 .sidebar_container.active .sidebar_top {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	padding: 25px 16px 8px 25px;
+	padding: 25px 16px 8px 16px;
 	color: #fff;
 	font-size: x-large;
 }
 
 .sidebar_top i {
-	align-self: flex-end;
-	padding: 3px 0 0 0;
+	position: absolute;
+	left: 200px;
+	top: 39px;
+	cursor: pointer;
+	color: white;
+	transition: left 0.3s ease-out;
 }
 
 .sidebar_li_container {
@@ -75,10 +84,10 @@
 .sidebar_bottom {
 	position: absolute;
 	bottom: 0;
-	width: 250px;
+	width: 242px;
 	display: flex;
 	align-items: center;
-	padding: 12px;
+	padding: 12px 12px 20px 12px;
 	color: white;
 }
 
@@ -105,6 +114,8 @@
 .sidebar_bottom .sidebar_bottom_text {
 	padding: 0 0.8rem;
 	overflow: hidden;
+	visibility: visible;
+	max-height: 38px;
 }
 
 .sidebar_bottom .sidebar_logout_container {
@@ -115,33 +126,69 @@
 }
 
 .sidebar_bottom .sidebar_logout_container i {
-  align-self: center;
+ 	align-self: center;
 	padding: 0 0.2rem;
-}
-
-.sidebar_container.active {
-	width: 90px;
 }
 
 .sidebar_container.active .sidebar_top p {
 	opacity: 0;
+	visibility: hidden;
+	transition:visibility 0.045s linear,opacity 0.045s linear;
+}
+
+.sidebar_top p {
+	transition:visibility 0.045s ease-out,opacity 0.045s ease-out 0.18s;
 }
 
 .sidebar_container.active .sidebar_top i {
-	position: absolute;
 	left: 33px;
+	transition: left 0.3s ease-out;
 }
 
 .sidebar_container.active ul li span {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
+	transition:visibility 0.045s linear 0.15s, opacity 0.045s linear;
+	/*https://stackoverflow.com/questions/27900053/css-transition-with-visibility-not-working*/
+}
+
+.sidebar_container ul li span {
+	opacity: 1;
+	visibility: visible;
+	transition:visibility 0.045s linear, opacity 0.045s ease-out 0.18s;
+	/*https://stackoverflow.com/questions/27900053/css-transition-with-visibility-not-working*/
+}
+
+.sidebar_container.active .sidebar_bottom {
+	width: 74px;
+	transition: width 0.3s linear 0.3s;
+}
+
+.sidebar_container.active .sidebar_bottom_text {
+	opacity: 0;
+	visibility: hidden;
+	display: block;
+	transition: visibility 0.045s linear 0.3s,opacity 0.045s linear;
 }
 
 .sidebar_container.active .sidebar_bottom p {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
+	transition:visibility 0.045s linear,opacity 0.045s linear;
 }
 
 .sidebar_container.active .sidebar_bottom i {
-	display: none;
+	opacity: 0;
+	visibility: hidden;
+	transition:visibility 0.045s linear,opacity 0.045s linear;
+}
+
+.sidebar_container .sidebar_bottom p {
+	transition:visibility 0.045s linear,opacity 0.045s linear 0.05s;
+}
+
+.sidebar_container .sidebar_bottom i {
+	transition:visibility 0.045s linear,opacity 0.045s linear 0.05s;
 }
 
 .main-content.active{
@@ -154,4 +201,7 @@
 	position: absolute;
 	left: 250px;
 	width: calc(100% - 250px);
+	transition: width 0.5s;
+	z-index: 10;
 }
+
